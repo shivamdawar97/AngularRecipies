@@ -1,35 +1,47 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="" alt="" class="img-fluid" >
+        <img
+        [src]="recipe.imagePath"
+        alt="{{recipe.name}}"
+        class="img-fluid"
+        style="max-height: 300px;"
+        >
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>{{ recipe.name  }}</h1>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-       <div class="btn-group">
-           
-        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <div ngbDropdown class="btn-group">
+        <button ngbDropdownToggle id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manage Recipe
           </button>
-           <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="#">To Shopping list</a></li>  
-            <li><a class="dropdown-item" href="#">Edit Recipe</a></li>   
-            <li><a class="dropdown-item" href="#">Delete Recipe</a></li>   
+           <ul ngbDropdownMenu class="dropdown-menu">
+            <li><a (click)="onAddToShoppingList()" class="dropdown-item" style="cursor: pointer;" >To Shopping list</a></li>
+            <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+            <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
            </ul>
-       </div> 
+       </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Description
+        {{recipe.description}}
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Ingredients
+        <ul class="list-group">
+          <li
+          class="list-group-item"
+          *ngFor="let ingr of recipe.ingredients"
+          >
+          {{ ingr.name }} - {{ ingr.amount }}
+          </li>
+        </ul>
     </div>
 </div>
