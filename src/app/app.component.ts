@@ -10,7 +10,4 @@ export class AppComponent {
   loadedFeature = 'recipe'
   title='ng-complete'
 
-  onNavigate(feature:string){
-    this.loadedFeature = feature
-  }
 }

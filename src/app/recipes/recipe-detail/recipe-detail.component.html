@@ -22,8 +22,8 @@
           </button>
            <ul ngbDropdownMenu class="dropdown-menu">
             <li><a (click)="onAddToShoppingList()" class="dropdown-item" style="cursor: pointer;" >To Shopping list</a></li>
-            <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
-            <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+            <li><a class="dropdown-item" (click)="onEditRecipe()" >Edit Recipe</a></li>
+            <li><a class="dropdown-item" >Delete Recipe</a></li>
            </ul>
        </div>
     </div>

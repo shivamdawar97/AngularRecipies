@@ -1,5 +1,6 @@
-<a href="#" class="list-group-item list-group-item-action flex-column" 
-  (click)="onSelected()"
+<a class="list-group-item list-group-item-action flex-column"
+  [routerLink]="[index]"
+  routerLinkActive="active"
 >
     <div class="media">
         <div class="media-body">
@@ -8,7 +9,7 @@
             {{ recipe.description  }}
         </p>
         </div>
-        <img [src]="recipe.imagePath" 
+        <img [src]="recipe.imagePath"
         alt="{{ recipe.name }}" class="img-responsive ml-5"
         style="max-height: 50px;">
       </div>
