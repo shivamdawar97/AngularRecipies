@@ -15,7 +15,7 @@ import { ShoppingListComponent } from './shopping-list.component';
     // CommonModule, to unlock ngIf and ngFor
     SharedModule,
     FormsModule,
-    RouterModule.forChild([ { path: 'shopping-list', component: ShoppingListComponent }])
+    RouterModule.forChild([ { path: '', component: ShoppingListComponent }])
   ]
 })
 export class ShoppingListModule {
